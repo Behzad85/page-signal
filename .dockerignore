@@ -1,0 +1,24 @@
+.git
+.github
+.next
+node_modules
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.local-only
+output
+.claude
+temp.md
+lib/* 2.js
+lib/* 2.mjs
+tests/* 2.mjs
+npm-debug.log*
+.DS_Store
+coverage
+dist
+mockups
+temp.html
+*.md
+!README.md

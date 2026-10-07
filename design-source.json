@@ -1,0 +1,664 @@
+{
+  "project": {
+    "name": "PageSignal",
+    "description": "Website evidence, UX review and feedback classification, translated into practical work.",
+    "lastUpdated": "2026-10-07",
+    "figmaUrl": null,
+    "figmaStatus": "USER_PROVIDED: no Figma source; interface developed with AI assistance.",
+    "origin": "USER_PROVIDED 2026-10-06: built independently from scratch as a side project, without an employer instruction."
+  },
+  "uiLibrary": {
+    "name": "Magic UI + shadcn/Radix",
+    "installation": "Official source registries, 2026-10-06",
+    "provider": "components/design/Providers.js",
+    "primitives": "components/design/primitives.js",
+    "components": "components/ui/",
+    "icons": "61 local Material SVG icons in components/design/icons.js",
+    "styles": "app/globals.css",
+    "framework": "Next.js App Router, React, Tailwind CSS, Motion",
+    "previousLibraryIncluded": false,
+    "notices": "THIRD_PARTY_NOTICES.md"
+  },
+  "tokens": {
+    "colors": {
+      "canvas": "#fafbff",
+      "rail": "#ffffff",
+      "surface": "#ffffff",
+      "text": "#172033",
+      "muted": "#59667d",
+      "border": "#e2e6ef",
+      "accent": "#4f46e5",
+      "accentHover": "#4338ca",
+      "success": "#287554",
+      "warning": "#92600c",
+      "critical": "#b33143",
+      "info": "#35617f"
+    },
+    "typography": {
+      "interface": "Segoe UI, Arial, sans-serif",
+      "headings": "Segoe UI, Arial, sans-serif",
+      "pageTitleDesktop": "clamp(34px, 3.3vw, 44px)",
+      "pageTitleMobile": "34px",
+      "body": "14px",
+      "intro": "15px",
+      "caption": "12px",
+      "button": "14px / 600"
+    },
+    "radii": {
+      "controls": "8px",
+      "surface": "12px",
+      "dialog": "14px"
+    },
+    "layout": {
+      "railWidth": "224px",
+      "mobileBreakpoint": "900px",
+      "contentMaxWidth": "1200px",
+      "pageGutterDesktop": "clamp(24px, 4vw, 64px)",
+      "pageGutterMobile": "20px",
+      "sectionGap": "24px"
+    },
+    "motion": {
+      "primaryActions": "Magic UI perimeter shimmer",
+      "measuredScores": "Magic UI Number Ticker with stable accessible final value",
+      "activeAnalysis": "Magic UI Border Beam",
+      "headings": "Static Magic UI Dot Pattern",
+      "reducedMotion": "Motion preference plus CSS: no shimmer/beam/transition animations; numeric value remains static"
+    },
+    "imagery": "Original neutral monogram SVGs for fictional personas; no old portrait or dashboard artwork."
+  },
+  "componentInventory": [
+    {
+      "name": "PS/AppShell",
+      "source": "components/design/AppShell.js",
+      "variants": [
+        "desktop-rail",
+        "mobile-bar",
+        "mobile-drawer-open"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/PageHeading",
+      "source": "components/design/AppShell.js",
+      "variants": [
+        "analysis",
+        "ux",
+        "feedback",
+        "about"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/Button",
+      "source": "components/design/primitives.js",
+      "variants": [
+        "contained",
+        "outlined",
+        "text",
+        "disabled",
+        "loading"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/TextInput",
+      "source": "components/design/primitives.js",
+      "variants": [
+        "empty",
+        "filled",
+        "required",
+        "disabled",
+        "search"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/Select",
+      "source": "components/design/primitives.js",
+      "variants": [
+        "labelled",
+        "filter",
+        "disabled"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/Textarea",
+      "source": "components/design/primitives.js",
+      "variants": [
+        "empty",
+        "filled",
+        "disabled"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/Dialog",
+      "source": "components/design/primitives.js",
+      "variants": [
+        "open",
+        "closed",
+        "sending",
+        "success",
+        "error"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/Badge",
+      "source": "components/design/primitives.js",
+      "variants": [
+        "neutral",
+        "success",
+        "warning",
+        "error",
+        "info"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/Alert",
+      "source": "components/design/primitives.js",
+      "variants": [
+        "warning",
+        "error",
+        "info"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/FileImport",
+      "source": "components/design/primitives.js",
+      "variants": [
+        "idle",
+        "file-selected"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/AnalysisForm",
+      "source": "components/PageSignalApp.js",
+      "variants": [
+        "site",
+        "page",
+        "compare",
+        "loading",
+        "cancelled"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/ScoreMeter",
+      "source": "components/optiscan/ui.js",
+      "variants": [
+        "compact",
+        "full",
+        "healthy",
+        "warning",
+        "critical"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/EvidenceSection",
+      "source": "components/optiscan/ui.js",
+      "variants": [
+        "default",
+        "empty",
+        "populated"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/ReportHeader",
+      "source": "components/optiscan/reports.js",
+      "variants": [
+        "site",
+        "page",
+        "compare",
+        "ux"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/ReportTabs",
+      "source": "components/optiscan/reports.js",
+      "variants": [
+        "active",
+        "inactive",
+        "overflow"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/ExportMenu",
+      "source": "components/optiscan/ExportMenu.js",
+      "variants": [
+        "closed",
+        "open",
+        "copied",
+        "copy-error"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/Progress",
+      "source": "components/optiscan/progress.js",
+      "variants": [
+        "running",
+        "completed",
+        "error",
+        "cancelled"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/TicketRow",
+      "source": "components/optiscan/tickets.js",
+      "variants": [
+        "collapsed",
+        "expanded",
+        "complete",
+        "incomplete"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/PersonaSelector",
+      "source": "components/optiscan/UxAuditWorkspace.js",
+      "variants": [
+        "primary",
+        "comparison",
+        "available",
+        "disabled"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/UxReport",
+      "source": "components/optiscan/UxAuditReport.js",
+      "variants": [
+        "overview",
+        "persona-analysis",
+        "journey",
+        "experiments",
+        "evidence",
+        "tickets"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/FeedbackWorkspace",
+      "source": "components/optiscan/FeedbackWorkspace.js",
+      "variants": [
+        "empty",
+        "populated",
+        "filtered",
+        "manual-entry",
+        "import-warning"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/FeedbackReview",
+      "source": "components/optiscan/FeedbackWorkspace.js",
+      "variants": [
+        "suggested",
+        "needs-review",
+        "reviewed",
+        "expanded"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/PersonaLibrary",
+      "source": "components/optiscan/FeedbackWorkspace.js",
+      "variants": [
+        "collapsed",
+        "expanded",
+        "fictional-example"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/FeedbackDialog",
+      "source": "components/optiscan/FeedbackButton.js",
+      "variants": [
+        "open",
+        "closed",
+        "sending",
+        "unconfigured",
+        "success"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with these variants and source-file metadata; compose page instances without detaching."
+    },
+    {
+      "name": "PS/SavedPersonaLibrary",
+      "source": "components/personas/SavedPersonaLibrary.js",
+      "variants": [
+        "unconfigured",
+        "signed-out",
+        "loading",
+        "empty",
+        "populated",
+        "error"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with source-file metadata and Auto Layout; compose page instances without detaching."
+    },
+    {
+      "name": "PS/PersonaEditor",
+      "source": "components/personas/SavedPersonaLibrary.js",
+      "variants": [
+        "create",
+        "edit",
+        "saving",
+        "validation-error"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with source-file metadata and Auto Layout; compose page instances without detaching."
+    },
+    {
+      "name": "PS/PersonaDeleteDialog",
+      "source": "components/personas/SavedPersonaLibrary.js",
+      "variants": [
+        "confirm",
+        "deleting",
+        "error"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with source-file metadata and Auto Layout; compose page instances without detaching."
+    },
+    {
+      "name": "PS/PersonaSignInDialog",
+      "source": "components/personas/SavedPersonaLibrary.js",
+      "variants": [
+        "email-entry",
+        "sending",
+        "link-sent",
+        "error"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Build a reusable component set with source-file metadata and Auto Layout; compose page instances without detaching."
+    },
+    {
+      "name": "PS/ShimmerButton",
+      "source": "components/ui/shimmer-button.js",
+      "variants": [
+        "default",
+        "disabled",
+        "busy",
+        "reduced-motion"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Create a reusable source-linked component; document code animation as interaction metadata, keeping page instances intact."
+    },
+    {
+      "name": "PS/NumberTicker",
+      "source": "components/ui/number-ticker.js",
+      "variants": [
+        "measured-score",
+        "reduced-motion"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Create a reusable source-linked component; document code animation as interaction metadata, keeping page instances intact."
+    },
+    {
+      "name": "PS/BorderBeam",
+      "source": "components/ui/border-beam.js",
+      "variants": [
+        "active-scan",
+        "reduced-motion-hidden"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Create a reusable source-linked component; document code animation as interaction metadata, keeping page instances intact."
+    },
+    {
+      "name": "PS/DotPattern",
+      "source": "components/ui/dot-pattern.js",
+      "variants": [
+        "static-header"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Create a reusable source-linked component; document code animation as interaction metadata, keeping page instances intact."
+    },
+    {
+      "name": "PS/GitHubStars",
+      "source": "components/design/GitHubStars.js",
+      "variants": [
+        "loading",
+        "loaded",
+        "unavailable",
+        "keyboard-focus"
+      ],
+      "figmaNodeId": null,
+      "figmaSyncHint": "Reusable link with GitHub vector, count and state variants; place an instance in the shared workspace top bar."
+    }
+  ],
+  "pageFrames": [
+    {
+      "name": "PS/Website analysis",
+      "route": "/",
+      "states": [
+        "site-empty",
+        "page-empty",
+        "compare-empty",
+        "loading",
+        "report-overview",
+        "report-tickets"
+      ],
+      "figmaNodeId": null
+    },
+    {
+      "name": "PS/UX review",
+      "route": "/ux-audit",
+      "states": [
+        "persona-selection",
+        "loading",
+        "report",
+        "saved-personas-unconfigured",
+        "saved-personas-signed-out",
+        "saved-personas-empty",
+        "saved-personas-populated",
+        "persona-create",
+        "persona-edit",
+        "persona-delete",
+        "email-link-sent"
+      ],
+      "figmaNodeId": null
+    },
+    {
+      "name": "PS/Feedback",
+      "route": "/feedback",
+      "states": [
+        "empty",
+        "manual-entry",
+        "populated",
+        "filtered",
+        "review"
+      ],
+      "figmaNodeId": null
+    },
+    {
+      "name": "PS/About",
+      "route": "/about",
+      "states": [
+        "overview"
+      ],
+      "figmaNodeId": null
+    }
+  ],
+  "interactions": [
+    "Desktop rail and mobile drawer link to four routes; active route uses aria-current.",
+    "SEO tabs retain site/page/compare API values; Radix controls own tab keyboard behavior.",
+    "URLs normalize to HTTPS; Page analysis accepts up to five keywords.",
+    "Streaming analysis disables inputs, supports cancellation, and replaces progress with evidence reports.",
+    "UX requires one primary persona and allows two distinct comparison personas.",
+    "Feedback persists only in a versioned browser-local store; user corrections remain reviewable.",
+    "Export menu supports PDF, current-tab CSV and copied spreadsheet-safe tables.",
+    "Dialogs trap focus, close on Escape and return focus to their trigger.",
+    "Manual feedback corrections persist as drafts across reloads; editing clears the previous reviewed status. Route changes restore the workspace heading to the top.",
+    "Optional Supabase email-link sign-in unlocks a private Postgres persona library, with create, edit and confirmed delete actions.",
+    "Audit selectors merge examples and owned saved personas; at most two distinct comparisons can be checked. Deleting the selected primary restores Lucy and removes any duplicate comparison.",
+    "Custom personas use monogram avatars. Examples are labelled Example by known ID, independent of the core persona flag.",
+    "Signing out clears the private library and current report/rerun payload. Deleting a persona preserves existing report snapshots.",
+    "Mutation dialogs disable controls while saving; errors preserve the editable form and do not imply database success.",
+    "Radix dialogs trap focus and use generated title associations; controlled dialogs restore the actual opener.",
+    "Export menu supports arrow-key navigation and returns focus to its trigger.",
+    "Mobile navigation uses an explicit left placement variant, avoiding centered translate utilities; its 300px panel remains on-screen in the production build.",
+    "Header GitHub link opens Behzad85/page-signal in a new tab; exact live star count refreshes every five minutes while visible, with loading and unavailable states."
+  ],
+  "seededData": {
+    "urls": [
+      "https://example.com",
+      "https://iana.org",
+      "https://wikipedia.org"
+    ],
+    "personas": [
+      "alex",
+      "lucy",
+      "sarah"
+    ],
+    "personaSource": "lib/personas.mjs",
+    "feedbackDefault": [],
+    "reports": "No fabricated seeded metrics; demo actions fetch live public targets.",
+    "customPersonasDefault": []
+  },
+  "figmaValidation": {
+    "writesPerformed": false,
+    "components": 0,
+    "componentSets": 0,
+    "instances": 0,
+    "autoLayoutContainers": 0,
+    "reason": "No Figma URL provided. Code inventory is not a Figma component count."
+  },
+  "validation": {
+    "date": "2026-10-06",
+    "status": "magic_ui_local_and_clean_export_checks_passed",
+    "spec": "docs/superpowers/specs/2026-10-06-magic-ui-design.md",
+    "imageConcept": "Unavailable: no built-in image-generation tool; written design specification used.",
+    "testsPassed": 70,
+    "lint": "passed",
+    "productionDependencyAdvisories": 0,
+    "productionBuild": "passed: npm run build -- --webpack; local Turbopack helper-port restriction documented",
+    "browserViewports": [
+      {
+        "width": 1280,
+        "height": 800
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "browserChecks": [
+      "site/page/compare forms and keyboard tabs",
+      "custom persona create, reload persistence, edit, audit selection, delete and sign-out using real disposable Postgres with an Auth/Data API test double",
+      "live heuristic example.com UX report using the custom persona; report tabs and keyboard export menu",
+      "feedback entry, draft reload persistence, mark reviewed and test-record removal",
+      "labelled dialogs, Escape close and opener focus restoration",
+      "mobile editor without horizontal overflow",
+      "production mobile drawer at x=0, y=0, width=300, height=844; centered feedback dialog at x=20, width=350",
+      "unconfigured production persona view with three Example labels and zero console warnings/errors"
+    ],
+    "developmentDependencyAdvisoryEntries": 5,
+    "publicFilePatternFindings": 0,
+    "codeComponentInventoryCount": 33,
+    "pageFrameCount": 4,
+    "limitations": [
+      "No generated image reference; inspected against the written design specification.",
+      "No paid AI/Google/screenshot or live email integrations exercised.",
+      "No new GitHub Actions run, Docker runtime or unrestricted hosted deployment exercised.",
+      "PDF content covered by automated tests; no final manual PDF/CSV download inspection.",
+      "Hosted Supabase email delivery, PKCE verification and refresh have not been exercised; local browser tests used a disposable Auth/Data API test double backed by real Postgres.",
+      "Reduced-motion CSS and Motion guards reviewed in source; forced reduced-motion browser session not performed."
+    ],
+    "personaSpec": "docs/superpowers/specs/2026-10-06-saved-personas-design.md",
+    "publicFilesChecked": 140,
+    "postgres": "PostgreSQL 14.19: fresh-cluster bootstrap, migration, owner CRUD/isolation, anonymous denial, immutable ownership, validation and 50-row quota passed.",
+    "sourceSnapshotFiles": 139,
+    "cleanExport": "139 source files; fresh npm ci installed 453 packages; 70 tests and Webpack production build passed without private environment files."
+  },
+  "publicRelease": {
+    "status": "publication_authorized_snapshot_preflight",
+    "figmaChanged": false,
+    "analyticsDefault": "disabled",
+    "feedbackDefault": "disabled_without_server_configuration",
+    "assetRights": "Former company-specific content and portraits removed; replaced with original fictional examples and SVG avatars.",
+    "codeRights": "USER_PROVIDED 2026-10-06: owner may publish the application code.",
+    "documentationRoute": "/about",
+    "privateFeedbackIsolation": "optiscan.feedback-library.generic.v1",
+    "validation": {
+      "record": "docs/RELEASE_VALIDATION.md",
+      "status": "local_checks_passed_with_documented_limits",
+      "date": "2026-10-06"
+    },
+    "identity": "PageSignal",
+    "sourceArchive": "output/pagesignal-public-source.zip",
+    "repositoryUrl": "https://github.com/Behzad85/page-signal",
+    "publicAuthor": "Behzad85"
+  },
+  "personaStorage": {
+    "provider": "Supabase Postgres and Auth",
+    "decision": "ASSUMPTION: private owner-only personas with email-link sign-in; no live service selected or connected.",
+    "fields": [
+      "name",
+      "description",
+      "goals",
+      "blockers",
+      "audit_focus"
+    ],
+    "limitPerOwner": 50,
+    "migration": "supabase/migrations/202610060001_personas.sql",
+    "access": "Verified server session, owner-scoped queries and forced database row-level security",
+    "credentials": "Server-only publishable/anon key; no service-role key",
+    "cookies": "HttpOnly, SameSite=Lax, Secure on HTTPS",
+    "feedbackClassification": "Continues using the fictional example library only"
+  },
+  "repositoryLinkValidation": {
+    "date": "2026-10-07",
+    "status": "local_checks_passed",
+    "testsPassed": 70,
+    "lint": "passed",
+    "productionBuild": "passed: Webpack",
+    "publicFilesChecked": 142,
+    "publicFilePatternFindings": 0,
+    "sourceSnapshotFiles": 141,
+    "browserChecks": [
+      "Loading then real public API count of 0 stars",
+      "Exact repository opened in a new tab",
+      "Desktop, 390x844 and 320x740 layouts inspected",
+      "Narrow-screen intrinsic grid overflow corrected; scroll/client width both 305px",
+      "Page analysis tab updates fields",
+      "Zero observed console warnings/errors"
+    ],
+    "limitations": [
+      "Five-minute polling and unavailable branches inspected in source; not simulated in browser."
+    ],
+    "publication": "Publication authorized 7 October 2026; Behzad85 administrator access verified; fresh snapshot preflight."
+  }
+}
