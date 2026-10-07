@@ -145,3 +145,12 @@ VERIFIED against the GitHub repository API, local commands and in-app browser on
 - Public pattern check: 142 files, 0 selected-pattern findings. The regenerated export and ZIP contain 141 source files, with byte equality and SHA-256 verification. Dependencies are unchanged from the previously clean-installed Magic UI version.
 
 The GitHub account available to the local CLI had read-only access to the selected repository. Publication remains pending write access; no push, remote change or deployment was performed. The original private Git history is excluded from the source export.
+
+
+## Public source publication — 7 October 2026
+
+VERIFIED using GitHub CLI identity/permission checks and the successful Git push: the active account was Behzad85 (ID 4369000), with administrator access to the initially empty public destination. A fresh root commit `dabc8c2e87d43cacbba348fd992a07668823098d` published all 141 reviewed source files on `main`, using the Behzad85 GitHub noreply identity. The publication repository shares no Git object store with the original private repository.
+
+Before publication, the working source passed lint and all 70 tests; its pattern check inspected 142 files with zero findings. The isolated 141-file publication checkout independently installed 453 packages and passed the Webpack production build without private environment files. Every exported source file was compared against the current workspace. No application code changed during publication.
+
+Follow the [GitHub Actions runs](https://github.com/Behzad85/page-signal/actions) for hosted application and PostgreSQL 17 checks. Earlier statements about missing write access and no push describe prior phases and are superseded by this publication record. This is a source release, not a hosted application deployment.

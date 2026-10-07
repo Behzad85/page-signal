@@ -604,7 +604,7 @@
     "cleanExport": "139 source files; fresh npm ci installed 453 packages; 70 tests and Webpack production build passed without private environment files."
   },
   "publicRelease": {
-    "status": "publication_authorized_snapshot_preflight",
+    "status": "public_source_published",
     "figmaChanged": false,
     "analyticsDefault": "disabled",
     "feedbackDefault": "disabled_without_server_configuration",
@@ -620,7 +620,10 @@
     "identity": "PageSignal",
     "sourceArchive": "output/pagesignal-public-source.zip",
     "repositoryUrl": "https://github.com/Behzad85/page-signal",
-    "publicAuthor": "Behzad85"
+    "publicAuthor": "Behzad85",
+    "initialCommit": "dabc8c2e87d43cacbba348fd992a07668823098d",
+    "publishedDate": "2026-10-07",
+    "authenticatedPublisher": "Behzad85"
   },
   "personaStorage": {
     "provider": "Supabase Postgres and Auth",
@@ -659,6 +662,6 @@
     "limitations": [
       "Five-minute polling and unavailable branches inspected in source; not simulated in browser."
     ],
-    "publication": "Publication authorized 7 October 2026; Behzad85 administrator access verified; fresh snapshot preflight."
+    "publication": "Public source pushed 7 October 2026 through Behzad85; original private history excluded."
   }
 }

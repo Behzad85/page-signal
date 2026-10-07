@@ -1,6 +1,6 @@
 # Public release checklist
 
-Preparation date: 6 October 2026. This is a local release candidate. The owner confirmed code publication rights; credential revocation remains unverified.
+Preparation date: 6 October 2026. Initial public source publication: 7 October 2026 at https://github.com/Behzad85/page-signal. The owner confirmed code publication rights; credential revocation remains unverified.
 
 ## Owner decisions required
 
@@ -54,3 +54,5 @@ The unrelated tracked scratch HTML was moved to ignored `.local-only/temp.html` 
 ## Publication authorization
 
 On 7 October 2026 the owner explicitly requested publication through Behzad85. GitHub CLI verified the active account and administrator access to the initially empty destination. Publish only a fresh snapshot commit; retain the private repository separately. The application has no selected open-source license.
+
+VERIFIED on 7 October 2026 through the Git push result: initial snapshot commit `dabc8c2e87d43cacbba348fd992a07668823098d` published on `main` using Behzad85. No original Git history or private environment configuration was included. GitHub validation results are available under [Actions](https://github.com/Behzad85/page-signal/actions). Hosted deployment, application license selection and credential revocation remain separate owner tasks.
